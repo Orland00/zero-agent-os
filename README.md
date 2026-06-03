@@ -20,6 +20,8 @@ single control plane. Zero is two things working together:
 - **One Worker, many tenants.** A single Hono app routes API traffic, Telegram
   webhooks, scheduled jobs, and an ops dashboard. Adding a business is adding a
   handler, not a new deployment.
+- **AI agent operations.** `docs/ai/` shows the public shell for prompt routing,
+  evals, critic checks, and approval-gated autonomous workflows.
 - **Security posture.** Bearer auth on `/api/*`, signature-verified webhooks,
   a KV-backed per-IP rate limiter, RLS-on Postgres accessed only via the
   service_role key server-side. Secrets live in `wrangler secret` / `.dev.vars`
