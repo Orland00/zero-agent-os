@@ -15,6 +15,8 @@ operational data.
 - Builder agent: prepares implementation plans and diffs.
 - Operator agent: monitors heartbeat, queue state, and approval requests.
 - Critic agent: checks whether work is shippable or needs another pass.
+- Archivist agent: turns completed work into reusable knowledge.
+- Agent topology: `docs/ai/agent-topology.md`.
 
 ## Control Plane
 
