@@ -22,6 +22,10 @@ single control plane. Zero is two things working together:
   handler, not a new deployment.
 - **AI agent operations.** `docs/ai/` shows the public shell for prompt routing,
   evals, critic checks, and approval-gated autonomous workflows.
+- **Database-backed control plane.** Tasks, tenants, contacts, orders,
+  approvals, heartbeats, and operator notes are modeled as durable state.
+- **External API integration shell.** The worker and scripts are organized for
+  messaging, billing, analytics, data providers, and business-specific services.
 - **Security posture.** Bearer auth on `/api/*`, signature-verified webhooks,
   a KV-backed per-IP rate limiter, RLS-on Postgres accessed only via the
   service_role key server-side. Secrets live in `wrangler secret` / `.dev.vars`
@@ -37,7 +41,11 @@ single control plane. Zero is two things working together:
 operating-system/   the framework docs (philosophy, decision rules, triage)
 agent-os/           the Cloudflare Worker (Hono) — API, webhooks, cron, dashboard
 scripts/            bash CLI helpers for the kanban / approval / heartbeat loop
+docs/               public architecture + AI operations shell
 ```
+
+See [`docs/architecture.md`](./docs/architecture.md) for the sanitized database,
+API, queue, scheduler, and integration map.
 
 ## Running the worker
 
