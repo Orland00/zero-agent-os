@@ -8,6 +8,10 @@ permissions:
 
 jobs:
   deploy:
+    environment: production
+    concurrency:
+      group: deploy-prod
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     defaults:
       run:
